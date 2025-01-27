@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/About.css";
 
-// Define the structure of the API data
 interface Post {
   id: number;
   title: string;
@@ -9,13 +8,15 @@ interface Post {
 }
 
 const About = () => {
-  const [items, setItems] = useState<Post[]>([]); // Tell TypeScript this is an array of 'Post'
+  const [items, setItems] = useState<Post[]>([]);
+
+  
   const [visibleItems, setVisibleItems] = useState(12);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
-      .then((data: Post[]) => setItems(data)); // Ensure TypeScript understands the fetched data is an array of 'Post'
+      .then((data: Post[]) => setItems(data));
   }, []);
 
   const handleShowMore = () => {
