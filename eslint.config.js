@@ -31,7 +31,7 @@ export default tseslint.config(
       "@typescript-eslint": tseslint, 
     },
     rules: {
-      ...react.configs.recommended.rules,
+      // ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
       ...tseslint.configs.recommendedTypeChecked.rules,
       ...tseslint.configs.stylisticTypeChecked.rules,
